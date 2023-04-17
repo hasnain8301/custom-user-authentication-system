@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block PageTitle %}Forget Password{% endblock PageTitle %}
+
+{% block formData %}
+<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+    <form method="POST" action="{% url 'Forget_Pass_Attempt' %}">
+        {% csrf_token %}
+        <div class="form-outline mb-4">
+            {% if messages %}
+                {% for message in messages %}
+                    <p id="message">{{message}}.<p>
+                {% endfor %}
+            {% endif %}
+        </div>
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <p>Please enter the email affiliated to your account.<p>
+    </div>
+      <div class="form-outline mb-4">
+        <input required type="email"  class="form-control form-control-lg" placeholder="E-mail" name="email"/>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Reset Password Now</button>
+    </form>
+</div>
+{% endblock formData %}

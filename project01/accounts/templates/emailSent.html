@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block PageTitle %}User Login {% endblock PageTitle %}
+
+{% block formData %}
+<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+    
+    
+        <div class="form-outline mb-4">
+            <label class="divider d-flex align-items-center" for="form1Example3">  
+                {% if messages %}
+                    {% for message in messages %}
+                        {{message}}.
+                    {% endfor %}
+                {% endif %}
+            </label>
+        </div>
+        <div class="form-outline mb-4">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'Login_Attempt' %}"
+        role="button">
+        <i class="fab fa-twitter me-2"></i>Login</a>
+        </div>
+        
+
+
+</div>
+      <!-- Submit button -->
+      
+</div>
+{% endblock formData %}
